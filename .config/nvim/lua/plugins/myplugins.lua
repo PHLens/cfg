@@ -1,22 +1,32 @@
 return {
   { "mrjones2014/smart-splits.nvim" },
   {
-  'rmagatti/auto-session',
-  lazy = false,
-  keys = {
-    -- Will use Telescope if installed or a vim.ui.select picker otherwise
-    { '<leader>wr', '<cmd>SessionSearch<CR>', desc = 'Session search' },
-    { '<leader>ws', '<cmd>SessionSave<CR>', desc = 'Save session' },
-    { '<leader>wa', '<cmd>SessionToggleAutoSave<CR>', desc = 'Toggle autosave' },
-  },
+    'rmagatti/auto-session',
+    lazy = false,
+    keys = {
+      -- Will use Telescope if installed or a vim.ui.select picker otherwise
+      { '<leader>wr', '<cmd>SessionSearch<CR>', desc = 'Session search' },
+      { '<leader>ws', '<cmd>SessionSave<CR>', desc = 'Save session' },
+      { '<leader>wa', '<cmd>SessionToggleAutoSave<CR>', desc = 'Toggle autosave' },
+    },
 
-  ---enables autocomplete for opts
-  ---@module "auto-session"
-  ---@type AutoSession.Config
-  opts = {
-    suppressed_dirs = { '~/', '~/Projects', '~/Downloads', '/' },
-    -- log_level = 'debug',
+    ---enables autocomplete for opts
+    ---@module "auto-session"
+    ---@type AutoSession.Config
+    opts = {
+      suppressed_dirs = { '~/', '~/Projects', '~/Downloads', '/' },
+      -- log_level = 'debug',
+    },
+    bypass_save_filetypes = { 'alpha', 'dashboard' } -- or whatever dashboard you use
   },
-  bypass_save_filetypes = { 'alpha', 'dashboard' } -- or whatever dashboard you use
-}
+  {
+    "OXY2DEV/markview.nvim",
+    lazy = false,
+  
+    -- For blink.cmp's completion
+    -- source
+    -- dependencies = {
+    --     "saghen/blink.cmp"
+    -- },
+  },
 }

@@ -95,6 +95,7 @@ alias l='ls -CF'
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+alias vim='nvim'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -113,5 +114,13 @@ if ! shopt -oq posix; then
     . /usr/share/bash-completion/bash_completion
   elif [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
+  fi
+fi
+
+if [ -f /.dockerenv ]; then
+  echo "Running inside Docker..."
+  alias clangd
+  if [ -d "/root/nvim-linux-x86_64" ]; then
+    ln -s /root/nvim-linux-x86_64/bin/nvim /usr/bin/nvim
   fi
 fi

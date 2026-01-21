@@ -6,9 +6,11 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
+
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -102,12 +104,25 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
+alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+#if [ -x /usr/bin/nvim ]; then
+#  alias vim=nvim
+#  export EDITOR=nvim
+#else
+#  export EDITOR=vim
+#fi
+
+alias cmake=/projs/framework/lipenghui/venv/pytorch_main/lib/python3.10/site-packages/cmake/data/bin/cmake
+#alias node=/home/lipenghui/local/node/bin/node
+alias vim=/home/lipenghui/nvim-linux-x86_64/bin/nvim
+alias src="source ~/setup_env.sh"
+export PATH=$PATH:/home/lipenghui/local/bin:/home/lipenghui/local/node/bin/
+export LIBRARY_PATH=/home/lipenghui/local/lib:$LIBRARY_PATH
+export LD_LIBRARY_PATH=/home/lipenghui/local/lib:/usr/local/python3.10/lib:/home/lipenghui/local/python3.10/lib:$LD_LIBRARY_PATH
 
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
-# key bind for HOME/END.
 bindkey "\e[1~" beginning-of-line
 bindkey "\e[4~" end-of-line
 bindkey "\e[5~" beginning-of-history
@@ -115,3 +130,4 @@ bindkey "\e[6~" end-of-history
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

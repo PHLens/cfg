@@ -112,7 +112,8 @@ return {
     -- this file can contain specific instructions for your project
     instructions_file = "avante.md",
     -- for example
-    provider = "claude",
+    provider = "claude-code",
+    mode = "legacy",
     providers = {
       claude = {
         endpoint = "https://api.anthropic.com",
@@ -124,12 +125,26 @@ return {
           },
       },
       moonshot = {
-        endpoint = "https://api.moonshot.ai/v1",
-        model = "kimi-k2-0711-preview",
+        endpoint = "https://api.moonshot.cn/v1",
+        model = "kimi-k2-turbo-preview",
+        env = {
+          MOONSHOT_API_KEY = os.getenv("MOONSHOT_API_KEY")
+        },
         timeout = 30000, -- Timeout in milliseconds
         extra_request_body = {
           temperature = 0.75,
           max_tokens = 32768,
+        },
+      },
+    },
+    acp_providers = {
+      ["claude-code"] = {
+        -- command = "claude",
+        command = "npx",
+        args = { "@zed-industries/claude-code-acp" },
+        env = {
+          ANTHROPIC_AUTH_TOKEN = os.getenv("ANTHROPIC_AUTH_TOKEN"),
+          ANTHROPIC_BASE_URL = os.getenv("ANTHROPIC_BASE_URL"),
         },
       },
     },

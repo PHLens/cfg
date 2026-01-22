@@ -117,7 +117,7 @@ alias cmake=/projs/framework/lipenghui/venv/pytorch_main/lib/python3.10/site-pac
 #alias node=/home/lipenghui/local/node/bin/node
 alias vim=/home/lipenghui/nvim-linux-x86_64/bin/nvim
 alias src="source ~/setup_env.sh"
-export PATH=$PATH:/home/lipenghui/local/bin:/home/lipenghui/local/node/bin/
+export PATH=$PATH:/home/lipenghui/local/bin:/home/lipenghui/local/node/bin/:/home/lipenghui/.local/bin/:$HOME/node_modules/.bin/
 export LIBRARY_PATH=/home/lipenghui/local/lib:$LIBRARY_PATH
 export LD_LIBRARY_PATH=/home/lipenghui/local/lib:/usr/local/python3.10/lib:/home/lipenghui/local/python3.10/lib:$LD_LIBRARY_PATH
 
@@ -131,3 +131,8 @@ bindkey "\e[6~" end-of-history
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+alias avante='vim -c "lua vim.defer_fn(function()require(\"avante.api\").zen_mode()end, 100)"'
+export ANTHROPIC_BASE_URL=http://bj.caip.cambricon.com:32146
+export ANTHROPIC_AUTH_TOKEN=sk-gAAAAABpcHtgQ8D5VnajMWuBV0sLxRBY9Z_oTobVEGVxrghiViJj3nloaEbLumF1e8mVMwFrd3dIe8ygSshc0Q9g05Lvrio4izAsQhoQBCO3OB_gA8mKiyWy5Yp7XUh8ia0Eu_gRCrCWsxiz9TYILZ44rQdsk4FV-J7_DC538EHEoWuc9Jwa7vRhcrksaQF53Wn-VT-wy7Gr_2tW3R0hN1W0xRilSjABUo_aOM5VpL0VT2i_kjm_iBDvaCvIZ0fXb8HHBtAoy6da
+export MOONSHOT_API_KEY=sk-IORYM9PASeYAwDvWI5tfDEecORstIgTwYxlH1r3kBamwtB4g

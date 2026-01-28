@@ -137,6 +137,9 @@ return {
         },
       },
     },
+    behaviour = {
+      auto_suggestions = true,
+    },
     acp_providers = {
       ["claude-code"] = {
         -- command = "claude",

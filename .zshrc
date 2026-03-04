@@ -133,13 +133,21 @@ bindkey "\e[6~" end-of-history
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 alias avante='vim -c "lua vim.defer_fn(function()require(\"avante.api\").zen_mode()end, 100)"'
+export ANTHROPIC_BASE_URL=https://coding.dashscope.aliyuncs.com/apps/anthropic #https://dashscope.aliyuncs.com/apps/anthropic
+export ANTHROPIC_AUTH_TOKEN=sk-sp-141a5df5dcc6497b92049c77cbb34268 #sk-6bf12fb730604683a4f8a73eb4170d72
+export ANTHROPIC_MODEL=glm-5 # 在 https://wiki.cambricon.com/pages/viewpage.action?pageId=529938682 中找到各个待测模型 ID
+export OPENAI_BASE_URL=https://coding.dashscope.aliyuncs.com/v1
+#export CNAGENT_API_KEY=sk-gAAAAABpcHtgQ8D5VnajMWuBV0sLxRBY9Z_oTobVEGVxrghiViJj3nloaEbLumF1e8mVMwFrd3dIe8ygSshc0Q9g05Lvrio4izAsQhoQBCO3OB_gA8mKiyWy5Yp7XUh8ia0Eu_gRCrCWsxiz9TYILZ44rQdsk4FV-J7_DC538EHEoWuc9Jwa7vRhcrksaQF53Wn-VT-wy7Gr_2tW3R0hN1W0xRilSjABUo_aOM5VpL0VT2i_kjm_iBDvaCvIZ0fXb8HHBtAoy6da
 #export ANTHROPIC_BASE_URL=http://bj.caip.cambricon.com:32146
 #export ANTHROPIC_AUTH_TOKEN=sk-gAAAAABpcHtgQ8D5VnajMWuBV0sLxRBY9Z_oTobVEGVxrghiViJj3nloaEbLumF1e8mVMwFrd3dIe8ygSshc0Q9g05Lvrio4izAsQhoQBCO3OB_gA8mKiyWy5Yp7XUh8ia0Eu_gRCrCWsxiz9TYILZ44rQdsk4FV-J7_DC538EHEoWuc9Jwa7vRhcrksaQF53Wn-VT-wy7Gr_2tW3R0hN1W0xRilSjABUo_aOM5VpL0VT2i_kjm_iBDvaCvIZ0fXb8HHBtAoy6da
-export CNAGENT_API_KEY=sk-gAAAAABpcHtgQ8D5VnajMWuBV0sLxRBY9Z_oTobVEGVxrghiViJj3nloaEbLumF1e8mVMwFrd3dIe8ygSshc0Q9g05Lvrio4izAsQhoQBCO3OB_gA8mKiyWy5Yp7XUh8ia0Eu_gRCrCWsxiz9TYILZ44rQdsk4FV-J7_DC538EHEoWuc9Jwa7vRhcrksaQF53Wn-VT-wy7Gr_2tW3R0hN1W0xRilSjABUo_aOM5VpL0VT2i_kjm_iBDvaCvIZ0fXb8HHBtAoy6da
-export ANTHROPIC_BASE_URL="https://openrouter.ai/api"
-export ANTHROPIC_AUTH_TOKEN=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 # 替换成 OpenRouter API密钥
-export ANTHROPIC_API_KEY="" # 设置成空，覆盖 Claude Code 原有配置
-export ANTHROPIC_MODEL=z-ai/glm-5 # 在 https://wiki.cambricon.com/pages/viewpage.action?pageId=529938682 中找到各个待测模型 ID
-export ANTHROPIC_DEFAULT_HAIKU_MODEL=$ANTHROPIC_MODEL
-export ANTHROPIC_DEFAULT_OPUS_MODEL=$ANTHROPIC_MODEL
-export ANTHROPIC_DEFAULT_SONNET_MODEL=$ANTHROPIC_MODEL
+#export ANTHROPIC_BASE_URL="https://openrouter.ai/api"
+#export ANTHROPIC_AUTH_TOKEN=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 # 替换成 OpenRouter API密钥
+#export ANTHROPIC_API_KEY="" # 设置成空，覆盖 Claude Code 原有配置
+#export ANTHROPIC_MODEL=z-ai/glm-5 # 在 https://wiki.cambricon.com/pages/viewpage.action?pageId=529938682 中找到各个待测模型 ID
+#export ANTHROPIC_DEFAULT_HAIKU_MODEL=$ANTHROPIC_MODEL
+#export ANTHROPIC_DEFAULT_OPUS_MODEL=$ANTHROPIC_MODEL
+#export ANTHROPIC_DEFAULT_SONNET_MODEL=$ANTHROPIC_MODEL
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
